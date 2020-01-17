@@ -7,9 +7,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y install \
     && mv composer.phar /usr/local/bin/composer \
 	&& composer global require "fxp/composer-asset-plugin:~1.4.2" \
 	&& composer global require hirak/prestissimo \
-    && docker-php-ext-install pdo_mysql exif shmop bcmath gmp zip \
+    && docker-php-ext-install pdo_mysql exif shmop bcmath gmp zip intl \
     && docker-php-ext-enable redis imagick \
-    && docker-php-ext-install intl \
     && docker-php-ext-configure gd \
         --with-gd \
         --with-freetype-dir=/usr/include/ \
