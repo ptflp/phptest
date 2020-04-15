@@ -2,7 +2,7 @@ FROM php:7.2.23-fpm-stretch
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y install \
     imagemagick libmagickwand-dev libgmp-dev tzdata git socat \
-    && pecl install imagick-beta redis-4.3.0 xdebug grpc protobuf \
+    && pecl install imagick-beta redis-4.3.0 xdebug \
     && curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer \
 	&& composer global require "fxp/composer-asset-plugin:~1.4.2" \
